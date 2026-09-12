@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2-Dars · Registr</title>
+  <meta name="description" content="Solfedjio 1-sinf, 2-dars — Registr">
+  <meta name="theme-color" content="#ff1e70">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/figma-ui.css">
+  <link rel="stylesheet" href="/lesson-one.css">
+  <link rel="stylesheet" href="/lesson-two.css">
+</head>
+<body class="figma-public">
+  <a class="skip-link" href="#lesson-main">Asosiy mazmunga o‘tish</a>
+  <main class="fs-lesson-page" id="lesson-main">
+    <header class="fs-nav fs-lesson-nav">
+      <a class="fs-brand" href="/index.html#/home"><span class="fs-logo">♫</span><span>Solfedjio</span></a>
+      <nav class="fs-navlinks" aria-label="Darslar menyusi">
+        <a href="/index.html#/home">Bosh sahifa</a>
+        <a href="/lesson-one.html">1-Dars</a>
+        <a class="active-lesson" href="/lesson-two.html" aria-current="page">2-Dars</a>
+        <a href="/index.html#/login">3-Dars</a>
+      </nav>
+      <div class="fs-navcta">
+        <a class="fs-link-btn" href="/index.html#/login">Kirish</a>
+        <a class="fs-btn fs-btn-primary fs-btn-small" href="/index.html#/login">Ro‘yxatdan o‘tish</a>
+      </div>
+    </header>
+
+    <section class="fs-lesson-strip" aria-labelledby="lesson-title">
+      <small>1-SINF › MUSIQA NAZARIYASI › 2-DARS</small>
+      <strong id="lesson-title">Registr 🎵</strong>
+    </section>
+
+    <section class="fs-registr-main">
+      <div class="fs-registr-title-row">
+        <div class="fs-registr-title-icon" aria-hidden="true">📖</div>
+        <div class="fs-registr-title-copy">
+          <h1>2-DARS. Registr.</h1>
+          <p>
+            Musiqiy tovushlar yangrashiga ko‘ra baland va past bo‘lishi mumkin.
+            Balandligiga ko‘ra bir-biriga yaqin tovushlarni
+            <span class="fs-reg-low">past</span>, <span class="fs-reg-mid">o‘rta</span> va
+            <span class="fs-reg-high">yuqori</span> registr sifatida tinglaymiz.
+          </p>
+        </div>
+      </div>
+
+      <div class="fs-registr-visual">
+        <img src="https://www.figma.com/api/mcp/asset/15afb1f1-feee-43c9-83e7-58537f8358c4.png" alt="Past, o‘rta va yuqori registrni ifodalovchi ayiq, mushuk va qush">
+      </div>
+
+      <div class="fs-piano-demo" aria-label="Past, o‘rta va yuqori registr ranglari bilan klaviatura">
+        <div class="fs-piano-keys" id="registr-piano"></div>
+      </div>
+
+      <div class="fs-register-audio-row" aria-label="Registr audio misollari">
+        <article class="fs-register-card low">
+          <div class="fs-animal-dot" aria-hidden="true">🐻</div>
+          <strong>Past Registr</strong>
+          <button class="fs-audio-pill" type="button" data-register-audio="0">▶ Past tovush</button>
+        </article>
+        <article class="fs-register-card mid">
+          <div class="fs-animal-dot" aria-hidden="true">🐱</div>
+          <strong>O‘rta Registr</strong>
+          <button class="fs-audio-pill" type="button" data-register-audio="1">▶ O‘rta tovush</button>
+        </article>
+        <article class="fs-register-card high">
+          <div class="fs-animal-dot" aria-hidden="true">🐦</div>
+          <strong>Yuqori Registr</strong>
+          <button class="fs-audio-pill" type="button" data-register-audio="2">▶ Yuqori tovush</button>
+        </article>
+      </div>
+    </section>
+
+    <a class="fs-lesson-fab prev" href="/lesson-one.html" aria-label="1-darsga qaytish">←</a>
+    <a class="fs-lesson-fab next" href="/index.html#/login" aria-label="Keyingi darsga o‘tish">→</a>
+  </main>
+
+  <script src="/config.js"></script>
+  <script src="/lesson-two.js" type="module"></script>
+</body>
+</html>
