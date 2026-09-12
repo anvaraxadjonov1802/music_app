@@ -92,6 +92,13 @@
   transform: translateY(-1px);
 }
 
+:global(#courses),
+:global(#teachers),
+:global(#pricing),
+:global(#contact) {
+  scroll-margin-top: 110px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .navLink,
   .navLink::after,
