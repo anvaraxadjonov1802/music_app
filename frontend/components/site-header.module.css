@@ -1,0 +1,101 @@
+.stickyHeader {
+  position: sticky !important;
+  top: 0;
+  z-index: 1000 !important;
+  background: rgba(255, 255, 255, .92) !important;
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border-bottom-color: rgba(255, 30, 112, .12) !important;
+  box-shadow: 0 8px 28px rgba(30, 18, 36, .06) !important;
+}
+
+.navLink {
+  position: relative;
+  min-height: 40px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: #524354;
+  transition:
+    color .18s ease,
+    background-color .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 3px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff1e70, #ff6644);
+  transform: scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+.navLink:hover:not(.activeLanding):not(.activeLesson) {
+  color: #ff1e70 !important;
+  background: rgba(255, 30, 112, .055);
+  transform: translateY(-1px);
+}
+
+.navLink:hover:not(.activeLanding):not(.activeLesson)::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.activeLanding {
+  padding: 8px 18px;
+  color: #fff !important;
+  background: linear-gradient(105deg, #ff1e70, #ff6644);
+  box-shadow: 0 5px 12px rgba(255, 30, 112, .20);
+}
+
+.activeLanding::after,
+.activeLesson::after {
+  display: none;
+}
+
+.activeLanding:hover {
+  color: #fff !important;
+  transform: translateY(-1px) scale(1.025);
+  filter: brightness(1.04);
+  box-shadow: 0 8px 17px rgba(255, 30, 112, .27);
+}
+
+.activeLesson {
+  padding: 8px 18px;
+  color: #fff !important;
+  background: linear-gradient(105deg, #2bb1ff, #4fc3f7);
+  box-shadow: 0 5px 12px rgba(43, 177, 255, .20);
+}
+
+.activeLesson:hover {
+  color: #fff !important;
+  transform: translateY(-1px) scale(1.025);
+  filter: brightness(1.04);
+  box-shadow: 0 8px 17px rgba(43, 177, 255, .27);
+}
+
+.brandLink {
+  transition: transform .18s ease;
+}
+
+.brandLink:hover {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navLink,
+  .navLink::after,
+  .brandLink {
+    transition: none;
+  }
+}
