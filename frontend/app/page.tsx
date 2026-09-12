@@ -3,11 +3,77 @@ import { NoteStrip } from '@/components/note-strip';
 import { SiteHeader } from '@/components/site-header';
 import { figmaAssets } from '@/lib/figma-assets';
 
-const features = [
-  { tone: '', icon: '🎮', title: 'Interaktiv darslar', text: "O'yinlar va qiziqarli topshiriqlar orqali bolalar nazariyani zerikmasdan o'rganishadi." },
-  { tone: 'blue', icon: '🎼', title: "Nota o'qish", text: 'Notalarni tez va oson tanish, skripka va bas kalitlarida mashq qilish tizimi.' },
-  { tone: 'orange', icon: '🔊', title: 'Quloq mashqlari', text: 'Musiqiy eshitish qobiliyatini, interval va akkordlarni aniqlash mahoratini oshirish.' },
-  { tone: 'green', icon: '⏱️', title: 'Ritm mashqlari', text: "Interaktiv metronom va qarsaklar orqali o'quvchilarda mukammal ritm tuyg'usini shakllantirish." },
+type FeatureIconName = 'gamepad' | 'music' | 'ear' | 'timer';
+
+type FeatureIconProps = {
+  name: FeatureIconName;
+};
+
+function FeatureIcon({ name }: FeatureIconProps) {
+  const common = {
+    width: 32,
+    height: 32,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 1.9,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+    'aria-hidden': true,
+  };
+
+  if (name === 'gamepad') {
+    return (
+      <svg {...common}>
+        <path d="M8.2 6.8h7.6c2.1 0 3.9 1.4 4.4 3.5l1.1 4.7c.5 2.2-1.9 3.9-3.7 2.6l-2.2-1.6H8.6l-2.2 1.6c-1.8 1.3-4.2-.4-3.7-2.6l1.1-4.7a4.5 4.5 0 0 1 4.4-3.5Z" />
+        <path d="M7.2 10.2v3.6M5.4 12h3.6" />
+        <circle cx="16.5" cy="10.8" r=".8" fill="currentColor" stroke="none" />
+        <circle cx="18.3" cy="13" r=".8" fill="currentColor" stroke="none" />
+      </svg>
+    );
+  }
+
+  if (name === 'music') {
+    return (
+      <svg {...common}>
+        <path d="M9 18V5.8l10-2V16" />
+        <path d="M9 9.2l10-2" />
+        <ellipse cx="6.2" cy="18" rx="2.8" ry="2.1" />
+        <ellipse cx="16.2" cy="16" rx="2.8" ry="2.1" />
+      </svg>
+    );
+  }
+
+  if (name === 'ear') {
+    return (
+      <svg {...common}>
+        <path d="M6.3 9.6a5.7 5.7 0 1 1 11.4.1c0 3.1-1.8 4.4-3.3 5.7-1.1 1-1.6 1.8-1.7 3.2-.1 1.3-1.1 2.4-2.5 2.4-1.5 0-2.6-1.2-2.6-2.7" />
+        <path d="M9.3 10a2.7 2.7 0 1 1 5.4 0c0 1.4-.8 2.2-1.7 2.9-.9.7-1.5 1.4-1.5 2.6" />
+        <path d="M7.7 15.2c.6.5 1.4.8 2.2.8" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg {...common}>
+      <circle cx="12" cy="13" r="7.5" />
+      <path d="M12 13V9.2M12 13l2.8 1.8" />
+      <path d="M9.3 2.8h5.4M12 5.5V3" />
+      <path d="M17.7 7.3l1.4-1.4" />
+    </svg>
+  );
+}
+
+const features: Array<{
+  tone: string;
+  icon: FeatureIconName;
+  title: string;
+  text: string;
+}> = [
+  { tone: '', icon: 'gamepad', title: 'Interaktiv darslar', text: "O'yinlar va qiziqarli topshiriqlar orqali bolalar nazariyani zerikmasdan o'rganishadi." },
+  { tone: 'blue', icon: 'music', title: "Nota o'qish", text: 'Notalarni tez va oson tanish, skripka va bas kalitlarida mashq qilish tizimi.' },
+  { tone: 'orange', icon: 'ear', title: 'Quloq mashqlari', text: 'Musiqiy eshitish qobiliyatini, interval va akkordlarni aniqlash mahoratini oshirish.' },
+  { tone: 'green', icon: 'timer', title: 'Ritm mashqlari', text: "Interaktiv metronom va qarsaklar orqali o'quvchilarda mukammal ritm tuyg'usini shakllantirish." },
 ];
 
 const courses = [
@@ -79,7 +145,9 @@ export default function HomePage() {
           <div className="grid-4">
             {features.map((feature) => (
               <article className={`card ${feature.tone}`} key={feature.title}>
-                <div className="feature-icon" aria-hidden="true">{feature.icon}</div>
+                <div className={`feature-icon feature-icon-${feature.tone || 'pink'}`} aria-hidden="true">
+                  <FeatureIcon name={feature.icon} />
+                </div>
                 <h3>{feature.title}</h3>
                 <p>{feature.text}</p>
               </article>
