@@ -86,7 +86,7 @@
 .noteItem {
   position: relative;
   height: 100%;
-  color: #ff2e74;
+  color: var(--tone);
 }
 
 .noteMark {
@@ -96,9 +96,9 @@
   width: 20px;
   height: 14px;
   border-radius: 50%;
-  background: currentColor;
+  background: var(--tone);
   transform: translate(-50%, -50%) rotate(-18deg);
-  box-shadow: 0 4px 10px color-mix(in srgb, currentColor 22%, transparent);
+  box-shadow: 0 4px 10px color-mix(in srgb, var(--tone) 22%, transparent);
 }
 
 .noteMark::after {
@@ -109,7 +109,7 @@
   width: 2px;
   height: 31px;
   border-radius: 2px;
-  background: currentColor;
+  background: var(--tone);
   transform: rotate(18deg);
   transform-origin: bottom;
 }
@@ -124,7 +124,6 @@
   align-items: center;
   justify-content: center;
   gap: 7px;
-  color: #342739;
 }
 
 .noteLabel small {
@@ -133,14 +132,15 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  color: currentColor;
-  background: color-mix(in srgb, currentColor 10%, white);
-  border: 1px solid color-mix(in srgb, currentColor 22%, white);
+  color: var(--tone);
+  background: color-mix(in srgb, var(--tone) 9%, white);
+  border: 1px solid color-mix(in srgb, var(--tone) 22%, white);
   font-size: 10px;
   font-weight: 800;
 }
 
 .noteLabel strong {
+  color: #342739;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 1;
@@ -148,10 +148,10 @@
   letter-spacing: .02em;
 }
 
-.pink { color: #ff2e74; }
-.blue { color: #2aa8ef; }
-.green { color: #2fbe9d; }
-.orange { color: #f39a2b; }
+.pink { --tone: #ff2e74; }
+.blue { --tone: #2aa8ef; }
+.green { --tone: #2fbe9d; }
+.orange { --tone: #f39a2b; }
 
 .do { --note-y: 72px; }
 .re { --note-y: 65px; }
