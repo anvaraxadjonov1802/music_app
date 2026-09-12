@@ -3,16 +3,26 @@ name: Quality checks
 on:
   push:
     branches:
-      - agent/mobile-foundation
-      - agent/piano-interactions
-      - agent/app-polish-auth
-      - agent/fix-brand-assets
-      - agent/release-hardening
+      - main
   pull_request:
     branches:
       - main
 
 jobs:
+  frontend-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npm run typecheck
+      - run: npm run build
+
   mobile-typecheck:
     runs-on: ubuntu-latest
     defaults:
