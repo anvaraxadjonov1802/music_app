@@ -1,0 +1,65 @@
+/* 2-dars: Registr — approved 1440x1024 Figma layout. */
+.fs-registr-main {
+  width: min(100%, 1440px);
+  min-height: 868px;
+  margin: 0 auto;
+  padding: 28px 80px 86px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.fs-registr-title-row { display:flex; align-items:center; gap:20px; }
+.fs-registr-title-icon {
+  width:64px; height:64px; flex:0 0 64px; border-radius:50%; display:grid; place-items:center;
+  color:#fff; font-size:28px; background:linear-gradient(105deg,#ff1e70,#ff6644);
+  box-shadow:0 4px 6px rgba(255,30,112,.25);
+}
+.fs-registr-title-copy h1 { margin:0; font-family:inherit; font-size:26px; font-weight:800; line-height:1.15; }
+.fs-registr-title-copy p { margin:6px 0 0; color:#524354; font-size:16px; line-height:1.6; }
+.fs-reg-low { color:#c8a227; font-weight:800; }.fs-reg-mid{color:#2bb1ff;font-weight:800}.fs-reg-high{color:#34d399;font-weight:800}
+
+.fs-registr-visual {
+  height:380px; overflow:hidden; border-radius:28px; border:1.5px solid #ffd6e7;
+  background:#fff; box-shadow:0 8px 28px rgba(255,30,112,.09);
+}
+.fs-registr-visual img { width:100%; height:100%; display:block; object-fit:cover; }
+
+.fs-piano-demo {
+  min-height:200px; padding:8px 12px 12px; border-radius:20px; border:1px solid #e5e7eb;
+  background:#fff; box-shadow:0 10px 28px -10px rgba(0,0,0,.07); overflow:hidden;
+}
+.fs-piano-keys { height:180px; display:flex; align-items:flex-end; position:relative; overflow:hidden; }
+.fs-white-key { height:160px; flex:1 1 0; min-width:34px; border:1px solid #e5e7eb; border-radius:0 0 8px 8px; }
+.fs-white-key.low { background:#ffdbe5; }.fs-white-key.mid{background:#fff2c7}.fs-white-key.high{background:#d1fadb}
+.fs-black-key {
+  position:absolute; top:2px; width:32px; height:100px; border-radius:0 0 5px 5px; background:#1e1224;
+  border:1px solid #2b1b33; box-shadow:0 6px 14px -6px rgba(0,0,0,.15); z-index:2;
+}
+
+.fs-register-audio-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.fs-register-card {
+  min-height:112px; padding:12px 14px; border-radius:20px; display:flex; align-items:center; gap:12px;
+  box-shadow:0 10px 18px rgba(0,0,0,.04);
+}
+.fs-register-card.low { background:#ffe5ed; border:1.5px solid #ff738c; }
+.fs-register-card.mid { background:#fff5d9; border:1.5px solid #ffb347; }
+.fs-register-card.high { background:#e0f2ff; border:1.5px solid #66bfff; }
+.fs-animal-dot { width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:grid;place-items:center;font-size:28px; }
+.low .fs-animal-dot{background:#ff8ca6}.mid .fs-animal-dot{background:#ffcc59}.high .fs-animal-dot{background:#73c7ff}
+.fs-register-card strong { font-size:18px; font-weight:800; white-space:nowrap; }
+.fs-audio-pill {
+  margin-left:auto; border:0; min-height:42px; padding:9px 14px; border-radius:999px; color:#fff; font-size:15px;
+  font-weight:800; cursor:pointer; box-shadow:0 8px 18px rgba(0,0,0,.08); white-space:nowrap;
+}
+.low .fs-audio-pill{background:linear-gradient(105deg,#ff1f70,#ff598c)}
+.mid .fs-audio-pill{background:linear-gradient(105deg,#ffb245,#ffd166)}
+.high .fs-audio-pill{background:linear-gradient(105deg,#2bb0ff,#66ccff)}
+.fs-audio-pill.is-loading{opacity:.65;cursor:wait}.fs-audio-pill.is-playing{filter:saturate(1.15);transform:translateY(-1px)}
+.fs-audio-status{font-size:11px;color:#857388;margin-left:auto}
+
+@media (max-width:1120px){
+  .fs-registr-main{padding-inline:48px}.fs-register-audio-row{grid-template-columns:1fr}.fs-register-card{min-height:92px}.fs-registr-visual{height:min(42vw,380px)}
+}
+@media (max-width:720px){
+  .fs-registr-main{padding:22px 18px 84px}.fs-registr-title-row{align-items:flex-start}.fs-registr-title-icon{width:52px;height:52px;flex-basis:52px}.fs-registr-title-copy h1{font-size:22px}.fs-registr-title-copy p{font-size:15px}.fs-registr-visual{height:300px}.fs-piano-demo{overflow-x:auto}.fs-piano-keys{min-width:900px}.fs-register-card{flex-wrap:wrap}.fs-audio-pill{margin-left:0}.fs-register-card strong{white-space:normal}
+}
