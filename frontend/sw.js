@@ -1,6 +1,6 @@
 // Online-first service worker: faqat ilova shell fayllarini kesh qilamiz.
 // Himoyalangan media va API javoblari kesh qilinmaydi.
-const CACHE = 'solfedjio-shell-v4';
+const CACHE = 'solfedjio-shell-v5';
 const SHELL = [
   '/',
   '/index.html',
@@ -10,6 +10,9 @@ const SHELL = [
   '/lesson-routing.js',
   '/lesson-one.html',
   '/lesson-one.css',
+  '/lesson-two.html',
+  '/lesson-two.css',
+  '/lesson-two.js',
   '/app.js',
   '/config.js',
   '/manifest.webmanifest',
