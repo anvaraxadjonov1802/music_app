@@ -67,13 +67,14 @@ function FeatureIcon({ name }: FeatureIconProps) {
 const features: Array<{
   tone: string;
   icon: FeatureIconName;
+  iconColor: string;
   title: string;
   text: string;
 }> = [
-  { tone: '', icon: 'gamepad', title: 'Interaktiv darslar', text: "O'yinlar va qiziqarli topshiriqlar orqali bolalar nazariyani zerikmasdan o'rganishadi." },
-  { tone: 'blue', icon: 'music', title: "Nota o'qish", text: 'Notalarni tez va oson tanish, skripka va bas kalitlarida mashq qilish tizimi.' },
-  { tone: 'orange', icon: 'ear', title: 'Quloq mashqlari', text: 'Musiqiy eshitish qobiliyatini, interval va akkordlarni aniqlash mahoratini oshirish.' },
-  { tone: 'green', icon: 'timer', title: 'Ritm mashqlari', text: "Interaktiv metronom va qarsaklar orqali o'quvchilarda mukammal ritm tuyg'usini shakllantirish." },
+  { tone: '', icon: 'gamepad', iconColor: '#b43b73', title: 'Interaktiv darslar', text: "O'yinlar va qiziqarli topshiriqlar orqali bolalar nazariyani zerikmasdan o'rganishadi." },
+  { tone: 'blue', icon: 'music', iconColor: '#2b8bc6', title: "Nota o'qish", text: 'Notalarni tez va oson tanish, skripka va bas kalitlarida mashq qilish tizimi.' },
+  { tone: 'orange', icon: 'ear', iconColor: '#d88920', title: 'Quloq mashqlari', text: 'Musiqiy eshitish qobiliyatini, interval va akkordlarni aniqlash mahoratini oshirish.' },
+  { tone: 'green', icon: 'timer', iconColor: '#2b9870', title: 'Ritm mashqlari', text: "Interaktiv metronom va qarsaklar orqali o'quvchilarda mukammal ritm tuyg'usini shakllantirish." },
 ];
 
 const courses = [
@@ -145,7 +146,7 @@ export default function HomePage() {
           <div className="grid-4">
             {features.map((feature) => (
               <article className={`card ${feature.tone}`} key={feature.title}>
-                <div className={`feature-icon feature-icon-${feature.tone || 'pink'}`} aria-hidden="true">
+                <div className={`feature-icon feature-icon-${feature.tone || 'pink'}`} style={{ color: feature.iconColor }} aria-hidden="true">
                   <FeatureIcon name={feature.icon} />
                 </div>
                 <h3>{feature.title}</h3>
