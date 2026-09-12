@@ -7,15 +7,21 @@ function wireLessonLinks(root = document) {
     if (link.textContent.includes('Darsni boshlash')) link.setAttribute('href', '/lesson-one.html');
   });
 
-  // Navbar 1-Dars button on the cover page.
-  root.querySelectorAll('[data-cover-lesson="1"]').forEach((button) => {
-    if (button.dataset.lessonWired === '1') return;
-    button.dataset.lessonWired = '1';
-    button.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.href = '/lesson-one.html';
-    }, true);
+  const lessonRoutes = {
+    '1': '/lesson-one.html',
+    '2': '/lesson-two.html',
+  };
+
+  Object.entries(lessonRoutes).forEach(([lesson, href]) => {
+    root.querySelectorAll(`[data-cover-lesson="${lesson}"]`).forEach((button) => {
+      if (button.dataset.lessonWired === '1') return;
+      button.dataset.lessonWired = '1';
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        window.location.href = href;
+      }, true);
+    });
   });
 }
 
