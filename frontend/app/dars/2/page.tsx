@@ -65,7 +65,7 @@ export default function LessonTwoPage() {
       </section>
 
       <Link className={`${styles.fab} ${styles.prev}`} href="/dars/1" aria-label="1-darsga qaytish">←</Link>
-      <span className={`${styles.fab} ${styles.next} ${styles.nextDisabled}`} aria-label="3-dars keyingi bosqichda">→</span>
+      <Link className={`${styles.fab} ${styles.next}`} href="/dars/3" aria-label="3-darsga o‘tish">→</Link>
     </main>
   );
 }
