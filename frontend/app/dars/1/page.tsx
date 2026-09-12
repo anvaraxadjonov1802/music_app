@@ -65,7 +65,7 @@ export default function LessonOnePage() {
       </section>
 
       <Link className="lesson-fab prev" href="/kurs/1" aria-label="Kurs boshiga qaytish">←</Link>
-      <span className="lesson-fab next" aria-label="Keyingi dars tez orada">→</span>
+      <Link className="lesson-fab next" href="/dars/2" aria-label="2-darsga o‘tish">→</Link>
     </main>
   );
 }
