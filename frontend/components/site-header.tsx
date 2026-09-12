@@ -32,7 +32,7 @@ export function SiteHeader({ mode = 'landing', activeLesson }: SiteHeaderProps) 
           <>
             <Link className={activeLesson === 1 ? 'nav-pill lesson-active' : 'nav-pill'} href="/dars/1">1-Dars</Link>
             <Link className={activeLesson === 2 ? 'nav-pill lesson-active' : 'nav-pill'} href="/dars/2">2-Dars</Link>
-            <span className={activeLesson === 3 ? 'nav-pill lesson-active' : 'nav-pill'}>3-Dars</span>
+            <Link className={activeLesson === 3 ? 'nav-pill lesson-active' : 'nav-pill'} href="/dars/3">3-Dars</Link>
           </>
         )}
       </nav>
