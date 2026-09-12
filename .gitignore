@@ -8,6 +8,7 @@ frontend/node_modules/
 .env.local
 .env.*.local
 backend/.env
+frontend/.env.local
 
 # Loglar
 npm-debug.log*
@@ -22,6 +23,8 @@ npm-debug.log*
 *.tsbuildinfo
 dist/
 coverage/
+.next/
+frontend/.next/
 
 # Vercel lokal papkasi
 .vercel/
