@@ -1,7 +1,16 @@
-// Online-first service worker: кэшируем только оболочку приложения.
-// Защищённые медиа и ответы API НЕ кэшируются.
-const CACHE = 'solfedjio-shell-v2';
-const SHELL = ['/', '/index.html', '/styles.css', '/app.js', '/config.js', '/manifest.webmanifest'];
+// Online-first service worker: faqat ilova shell fayllarini kesh qilamiz.
+// Himoyalangan media va API javoblari kesh qilinmaydi.
+const CACHE = 'solfedjio-shell-v3';
+const SHELL = [
+  '/',
+  '/index.html',
+  '/styles.css',
+  '/figma-ui.css',
+  '/figma-site.js',
+  '/app.js',
+  '/config.js',
+  '/manifest.webmanifest',
+];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
@@ -16,7 +25,6 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET') return;
-  // Никогда не кэшируем API и медиа: там персональные данные и подписанные ссылки
   if (url.pathname.startsWith('/api/')) return;
 
   e.respondWith(
